@@ -69,7 +69,23 @@ class LessonTwo(Lesson):
         time.sleep(2)
         print("Hit enter to continue")
         input("")
-        
+
+class LessonFour(Lesson):
+    def play(self, u):
+        print("In this lesson we will talk about variables.")
+        time.sleep(1)
+        print("A variable is a special word that can be given a meaning")
+        print("If you write the code 'myvar = 3', then you create a variable called myvar that actually means three")
+        time.sleep(2)
+        while True:
+            print("Try to now create a variable called 'john' that equals 4")
+            res = input()
+            if res.replace(" ". "") == "john=4":
+                print("Well done! john now equals 4!")
+                break
+            else:
+                print("I'm afraid that's wrong - try again")
+                print("Remember not to capitalise the j in john")
         
 def boot():
     print("This is the Python programmning course!")
