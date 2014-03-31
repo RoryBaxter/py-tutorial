@@ -59,7 +59,7 @@ def boot():
     print("This is the Python programmning course!")
     u = User(input("What is your name (type it and hit enter): "))
     print("OK, " + u.name + ", welcome!")
-    input("To start, hit enter")
+    input("To start, hit enter.")
     t = Tutorial(u)
     t.addLesson(LessonOne("Introduction"))
     t.run()
