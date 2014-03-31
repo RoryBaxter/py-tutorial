@@ -1,4 +1,5 @@
 import time
+Try_And_Try_Again = False
 class Tutorial:
     def __init__(self, user):
         self.lessons = []
@@ -69,38 +70,32 @@ class LessonTwo(Lesson):
         time.sleep(2)
         print("Hit enter to continue")
         input("")
-
-class LessonFour(Lesson):
-    def play(self, u):
-        print("In this lesson we will talk about variables.")
-        time.sleep(1)
-        print("A variable is a special word that can be given a meaning")
-        print("If you write the code 'myvar = 3', then you create a variable called myvar that actually means three")
+        print("Let's start with something simlpe. We'll do some adding with Python.")
+        print("Enter the equation '2+3' ")
+        First_Sum = input("")
+# These while loops will enable the code to ceck that the user has typed the correct code
+        while First_Sum != "2+3":
+            if Try_And_Try_Again == False:
+                print("Achievement Unlocked: Try and Try Again")
+                Try_And_Try_Again = True
+            print("Did you type in the correct sum. Make sure that you have the correc number of spaces. Remeber that the sum you need to type in is '2+3'")
+            First_Sum = input("")
+        print("5")
+        print("Acheveiment unlocked: First Code")
+        First_Code = True
         time.sleep(2)
-        while True:
-            print("Try to now create a variable called 'john' that equals 4")
-            res = input()
-            int count = 0
-            if res.replace(" ", "") == "john=4":
-                if count == 2:
-                    u.addStat("Third Time Lucky")
-                print("Well done! john now equals 4!")
-                u.addStat("Create a variable!")
-                break
-            else:
-                print("I'm afraid that's wrong - try again")
-                print("Remember not to capitalise the j in john")
-                count++
+        print("To contineue, hit enter")
+        input("")
+        print("Now let's try subtraction")
         time.sleep(2)
-        print()
-        print("Of course, you don't have to call your variables john")
-        print("The computer doesn't know that john is a name in real life")
-        print("It just knows that 'john' is the name of the variable")
-        time.sleep(2)
-        print()
-        print("Now let's try doing somthing with the variable.")
-        print("Remember learning how to print somthing in the last lesson?")
-        ##cont
+        print("Type in the sum '6-3'")
+        Second_Sum = input("")
+        while Second_Sum != "6-3":
+            print("Did you type in the code correctly. Remeber that the code you need is '6-3'
+            Second_Sum = input("")
+        print("Hit enter to continue")
+        input("")
+        print("Now we are")
         
 def boot():
     print("This is the Python programmning course!")
@@ -109,8 +104,6 @@ def boot():
     input("To start, hit enter.")
     t = Tutorial(u)
     t.addLesson(LessonOne("Introduction"))
-    t.addLesson(LessonTwo("Like a Calculator"))
-    t.addLesson(LessonFour("Variables"))
     t.run()
 
 boot()
