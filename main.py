@@ -80,12 +80,27 @@ class LessonFour(Lesson):
         while True:
             print("Try to now create a variable called 'john' that equals 4")
             res = input()
-            if res.replace(" ". "") == "john=4":
+            int count = 0
+            if res.replace(" ", "") == "john=4":
+                if count == 2:
+                    u.addStat("Third Time Lucky")
                 print("Well done! john now equals 4!")
+                u.addStat("Create a variable!")
                 break
             else:
                 print("I'm afraid that's wrong - try again")
                 print("Remember not to capitalise the j in john")
+                count++
+        time.sleep(2)
+        print()
+        print("Of course, you don't have to call your variables john")
+        print("The computer doesn't know that john is a name in real life")
+        print("It just knows that 'john' is the name of the variable")
+        time.sleep(2)
+        print()
+        print("Now let's try doing somthing with the variable.")
+        print("Remember learning how to print somthing in the last lesson?")
+        ##cont
         
 def boot():
     print("This is the Python programmning course!")
@@ -94,6 +109,8 @@ def boot():
     input("To start, hit enter.")
     t = Tutorial(u)
     t.addLesson(LessonOne("Introduction"))
+    t.addLesson(LessonTwo("Like a Calculator"))
+    t.addLesson(LessonFour("Variables"))
     t.run()
 
 boot()
