@@ -47,13 +47,29 @@ class LessonOne(Lesson):
         print("Python is a programing language.")
         time.sleep(2)
         print("This means it is a way of telling the computer what to do.")
+        time.sleep(1)
         input("Hit enter when you are ready")
-        print("Computers")
+        print("Python is used mostly for file sorting but can still be used for other tasks")
+        time.sleep(2)
+        print("It is what is klnown as a high level programing leanguage.")
+        time.sleep(1)
+        print("This means that it is similar to English")
+        time.sleep(1)
+        print("Now the introduction has finished, hit enter to start learning th basics of programming")
+        input("")
         return
-
+# This is the second lesson
 class LessonTwo(Lesson):
     def play(self, u):
-        pass
+        print("To start off with you will learn about how Python can be used as a calucalator")
+        time.sleep(2)
+        print("Computers are just like giant calculaors")
+        time.sleep(2)
+        print("Pyton is a way to be able to access the computer's calulator abilities")
+        time.sleep(2)
+        print("Hit enter to continue")
+        input("")
+        
         
 def boot():
     print("This is the Python programmning course!")
