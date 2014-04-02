@@ -61,9 +61,9 @@ class LessonOne(Lesson):
         Finished_Intro = True
         return
 # This is the second lesson
-Try_And_Try_Again = False
 class LessonTwo(Lesson):
     def play(self, u):
+        Try_And_Try_Again = False
         print("To start off with you will learn about how Python can be used as a calucalator")
         time.sleep(2)
         print("Computers are just like giant calculaors")
@@ -107,5 +107,66 @@ def boot():
     t = Tutorial(u)
     t.addLesson(LessonOne("Introduction"))
     t.run()
-
+    
+class LessonFour(Lesson):
+    def play(self, u):
+        print("In this lesson we will talk about variables.")
+        time.sleep(1)
+        print("A variable is a special word that can be given a meaning")
+        print("If you write the code 'myvar = 3', then you create a variable called myvar that actually means three")
+        time.sleep(2)
+        while True:
+            print("Try to now create a variable called 'john' that equals 4")
+            res = input()
+            int count = 0
+            if res.replace(" ", "") == "john=4":
+                if count == 2:
+                    u.addStat("Third Time Lucky")
+                print("Well done! john now equals 4!")
+                u.addStat("Create a variable!")
+                break
+            else:
+                print("I'm afraid that's wrong - try again")
+                print("Remember not to capitalise the j in john")
+                count++
+        time.sleep(2)
+        print()
+        print("Of course, you don't have to call your variables john")
+        print("The computer doesn't know that john is a name in real life")
+        print("It just knows that 'john' is the name of the variable")
+        time.sleep(2)
+        print()
+        print("Now let's try doing somthing with the variable.")
+        print("Remember learning how to print somthing in the last lesson?")
+        time.sleep(1)
+        print("We can print variables too!")
+        print("This is how:")
+        print()
+        print("var = \"Hello\"")
+        print("print(var)")
+        print()
+        print("Can you guess what this would do?")
+        time.sleep(3)
+        print("It makes the word Hello appear!")
+        time.sleep(1)
+        print("Now you try! Make the variable 'spoon' be whatever you like...")
+        print("...but remember to use '\"' around the text!")
+        while True:
+            var = input("spoon = ")
+            if not var[0] == "\"" or not var[-1] == "\"":
+                print("Remember to use speech marks around the text!")
+            else:
+                var = var.replace("\"", "")
+                break
+        print("Good job, " + u.name + "!")
+        print("Now print out the variable!")
+        while True:
+            pr = input()
+            if input == "print(spoon)":
+                print("Great Job!")
+                u.addStat("Printing variables, like a pro!")
+            else:
+                print("Not quite right!")
+                print("You need to print out the variable spoon, remember not to use quotes around the word spoon")
+        print("You have completed this lesson!")
 boot()
