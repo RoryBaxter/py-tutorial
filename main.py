@@ -55,6 +55,8 @@ class LessonOne(Lesson):
         time.sleep(2)
         print("This means that it is similar to English")
         time.sleep(2)
+        print("In Python, spaces matter a little, but not a lot")
+        time.sleep(2)
         print("Now the introduction has finished, hit enter to start learning th basics of programming")
         input("")
         print("Achiement Unlock: Finished Introduction")
@@ -75,16 +77,23 @@ class LessonTwo(Lesson):
         print("Let's start with something simlpe. We'll do some adding with Python.")
         print("Enter the equation '2+3' ")
         First_Sum = input("")
+        Done_F_S = False
 # These while loops will enable the code to ceck that the user has typed the correct code
-        while First_Sum != "2+3":
-            if Try_And_Try_Again == False:
-                print("Achievement Unlocked: Try and Try Again")
-                Try_And_Try_Again = True
-            print("Did you type in the correct sum. Make sure that you have the correc number of spaces. Remeber that the sum you need to type in is '2+3'")
-            First_Sum = input("")
-        print("5")
+        if First_Sum.replace(" ", "") == "2+3":
+            print ("5")
+        else:
+            while Done_F_S == False:
+                if Try_And_Try_Again == False:
+                    print("Achievement Unlocked: Try and Try Again")
+                    u.addStat("Try and Try Again")
+                    Try_And_Try_Again = True
+                print("Did you type in the correct sum. Make sure that you have the correc number of spaces. Remeber that the sum you need to type in is '2+3'")
+                First_Sum = input("")
+                if First_Sum.replace(" ", "") == "2+3":
+                    print("5")
+                    Done_F_S = True
         print("Acheveiment unlocked: First Code")
-        First_Code = True
+        u.addStat("First Code")
         time.sleep(2)
         print("To contineue, hit enter")
         input("")
@@ -92,12 +101,41 @@ class LessonTwo(Lesson):
         time.sleep(2)
         print("Type in the sum '6-3'")
         Second_Sum = input("")
-        while Second_Sum != "6-3":
+        while Second_Sum.replace(" ", "") != "6-3":
             print("Did you type in the code correctly. Remeber that the code you need is '6-3'")
             Second_Sum = input("")
+        print("Well done, that works")
         print("Hit enter to continue")
         input("")
-        print("Now we are")
+        print("Now we are going to do the same, but with multiplication")
+        time.sleep(2)
+        print("Try the sum which is normally written 2x4")
+        Third_Sum = input("")
+        if Third_Sum.replace(" ", "") == "2*4":
+            print("Thats correct, how did you know what to do.")
+        else:
+            print("That dosen't work in Python")
+        time.sleep(2)
+        print("In Python, to do a multiplication sum, you have to use a astrix (*)")
+        time.sleep(3)
+        print("Yet's just try another.")
+        print("Do the sum 5*3")
+        New_Third_Sum = input("")
+        while New_Third_Sum.replace(" ", "") != "5*3":
+            print("Try that code again, remeber that it is '5*3'")
+            New_Third_Sum = input("")
+        print(15)
+        print("Well done")
+        time.sleep(2)
+        print("Now let's do some division")
+        time.sleep(2)
+        print("Division is just like mulopiltlacation in Python in the sense that it does no use the tradioanal symbol.")
+        time.sleep(5)
+        print("In Python, the / is used for divsion")
+        time.sleep(2)
+        print("Try the sum 10/2")
+        Fourth_Sum = input("")
+        
 
 class LessonFour(Lesson):
     def play(self, u):
