@@ -1,5 +1,4 @@
 import time
-Try_And_Try_Again = False
 class Tutorial:
     def __init__(self, user):
         self.lessons = []
@@ -52,14 +51,17 @@ class LessonOne(Lesson):
         input("Hit enter when you are ready")
         print("Python is used mostly for file sorting but can still be used for other tasks")
         time.sleep(2)
-        print("It is what is klnown as a high level programing leanguage.")
-        time.sleep(1)
+        print("It is what is known as a high level programing leanguage.")
+        time.sleep(2)
         print("This means that it is similar to English")
-        time.sleep(1)
+        time.sleep(2)
         print("Now the introduction has finished, hit enter to start learning th basics of programming")
         input("")
+        print("Achiement Unlock: Finished Introduction")
+        Finished_Intro = True
         return
 # This is the second lesson
+Try_And_Try_Again = False
 class LessonTwo(Lesson):
     def play(self, u):
         print("To start off with you will learn about how Python can be used as a calucalator")
