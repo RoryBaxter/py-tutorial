@@ -137,8 +137,8 @@ class LessonFour(Lesson):
         print("print(var)")
         print()
         print("Can you guess what this would do?")
-        input("Press enter when ready
-              ")
+        input("Press enter when ready")
+        print("Hello")
         print("It makes the word Hello appear!")
         time.sleep(1)
         print("Now you try! Make the variable 'spoon' be whatever you like...")
@@ -155,18 +155,21 @@ class LessonFour(Lesson):
         while True:
             pr = input()
             if pr == "print(spoon)":
+                print(var)
                 print("Great Job!")
                 u.addStat("Printing variables, like a pro!")
+                break
             else:
                 print("Not quite right!")
                 print("You need to print out the variable spoon, remember not to use quotes around the word spoon")
         print("You have completed this lesson!")
-
+        
 def boot():
     print("This is the Python programmning course!")
     u = User(input("What is your name (type it and hit enter): "))
     print("OK, " + u.name + ", welcome!")
-    input("To start, hit enter.")
+    cmd = input("To start, hit enter.")
+
     t = Tutorial(u)
     t.addLesson(LessonOne("Introduction"))
     t.addLesson(LessonTwo("Calculator Operations"))
