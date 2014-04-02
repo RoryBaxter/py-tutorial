@@ -93,21 +93,12 @@ class LessonTwo(Lesson):
         print("Type in the sum '6-3'")
         Second_Sum = input("")
         while Second_Sum != "6-3":
-            print("Did you type in the code correctly. Remeber that the code you need is '6-3'
+            print("Did you type in the code correctly. Remeber that the code you need is '6-3'")
             Second_Sum = input("")
         print("Hit enter to continue")
         input("")
         print("Now we are")
-        
-def boot():
-    print("This is the Python programmning course!")
-    u = User(input("What is your name (type it and hit enter): "))
-    print("OK, " + u.name + ", welcome!")
-    input("To start, hit enter.")
-    t = Tutorial(u)
-    t.addLesson(LessonOne("Introduction"))
-    t.run()
-    
+
 class LessonFour(Lesson):
     def play(self, u):
         print("In this lesson we will talk about variables.")
@@ -118,7 +109,7 @@ class LessonFour(Lesson):
         while True:
             print("Try to now create a variable called 'john' that equals 4")
             res = input()
-            int count = 0
+            count = 0
             if res.replace(" ", "") == "john=4":
                 if count == 2:
                     u.addStat("Third Time Lucky")
@@ -128,7 +119,7 @@ class LessonFour(Lesson):
             else:
                 print("I'm afraid that's wrong - try again")
                 print("Remember not to capitalise the j in john")
-                count++
+                count += 1
         time.sleep(2)
         print()
         print("Of course, you don't have to call your variables john")
@@ -146,7 +137,8 @@ class LessonFour(Lesson):
         print("print(var)")
         print()
         print("Can you guess what this would do?")
-        time.sleep(3)
+        input("Press enter when ready
+              ")
         print("It makes the word Hello appear!")
         time.sleep(1)
         print("Now you try! Make the variable 'spoon' be whatever you like...")
@@ -162,11 +154,23 @@ class LessonFour(Lesson):
         print("Now print out the variable!")
         while True:
             pr = input()
-            if input == "print(spoon)":
+            if pr == "print(spoon)":
                 print("Great Job!")
                 u.addStat("Printing variables, like a pro!")
             else:
                 print("Not quite right!")
                 print("You need to print out the variable spoon, remember not to use quotes around the word spoon")
         print("You have completed this lesson!")
+
+def boot():
+    print("This is the Python programmning course!")
+    u = User(input("What is your name (type it and hit enter): "))
+    print("OK, " + u.name + ", welcome!")
+    input("To start, hit enter.")
+    t = Tutorial(u)
+    t.addLesson(LessonOne("Introduction"))
+    t.addLesson(LessonTwo("Calculator Operations"))
+    t.addLesson(LessonFour("Variables"))
+    t.run()
+    
 boot()
